@@ -1,0 +1,24 @@
+{
+  "name": "mongoose-1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bootswatch": "^5.1.1",
+    "express-validator": "^6.12.1",
+    "mongoose": "^5.13.3",
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "swr": "^0.5.6"
+  },
+  "devDependencies": {
+    "eslint": "7.31.0",
+    "eslint-config-next": "11.0.1"
+  }
+}
