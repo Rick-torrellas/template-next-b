@@ -11,7 +11,7 @@
 * Kanbas</br>
 <a href="./kanbas.md" title="kanbas"><img width="5%" src="https://res.cloudinary.com/rick-rick-torrellas/image/upload/v1629301660/icons/kanban_oifhu7.png"/></a>
 
-<h2 id="dependencies">Dependencies 📁</h2> 
+<h2 id="dependencies">Dependencies 📁</h2>
 
 [🏠](#nav "Back home")
 
@@ -34,7 +34,7 @@
 * "eslint-config-next": "11.0.1"
 ```
 
-## Scripts
+<h2 id="scripts"> Scripts 💻 </h2>
 
 [🏠](#nav "Back home")
 
@@ -49,6 +49,18 @@
 
 [🏠](#nav "Back home")
 
+* /api/data/[id]
+  * get
+  * put
+  * delete
+* /api/data/
+  * get
+  * post
+
 <h2 id="environment-variables">Environment variables 🔐</h2>
 
 [🏠](#nav "Back home")
+
+```dotenv
+MONGODB_URI=
+```
