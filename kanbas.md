@@ -15,6 +15,10 @@
 
 [menu](#kanbas)
 
+* anadir debug
+* anadir tester (jest)
+* documentarlo todo
+
 ## DOING
 
 [menu](#kanbas)
