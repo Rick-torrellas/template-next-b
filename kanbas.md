@@ -31,6 +31,8 @@
 
 [menu](#kanbas)
 
+* el jsdoc,jsdoc-http-plugin se estan instalando en las dependencias, y no en las dependencias de desarrollo.
+
 ## sources
 
 [menu](#kanbas)

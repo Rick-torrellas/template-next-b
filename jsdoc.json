@@ -1,0 +1,34 @@
+{
+  "source": {
+    "include": [
+      "pages",
+      "components",
+      "models"
+    ],
+    "includePattern": ".js$",
+    "excludePattern": "(node_modules|docs)"
+  },
+  "plugins": [
+    "plugins/markdown",
+    "jsdoc-http-plugin",
+    "node_modules/better-docs/component",
+    "node_modules/better-docs/category"
+  ],
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true,
+    "better-docs": {
+      "name": "My React components"
+    }
+  },
+  "tags": {
+    "allowUnknownTags": ["component","category"]
+},
+  "opts": {
+    "recurse": true,
+    "destination": "./docs",
+    "template": "node_modules/better-docs",
+    "tutorials": "./tutorials",
+    "readme": "./README.md"
+  }
+}

@@ -1,9 +1,28 @@
+//@ts-check
+/**
+ * @file 
+ * @description Este es el archivo principal de la aplicacion, renderizara el componente Home.
+ * @requires next/head
+ * @requires ./mongo 
+ * @requires ./Data 
+ * @requires next/link
+ * @requires debug
+ */
+const debug = require("debug")("debug");
 import Head from "next/head";
 import mongo from "../db/mongo";
 import Data from "../models/Data";
 import Link from "next/link";
-
-export default function Home({ data }) {
+/**
+ * @component
+ * @param {Object} props
+ * @param {Object} props.data La informacion recibida de la base de datos. informacion generica del template
+ * @param {string} props.data.title El titulo de la informacion.
+ * @param {string} props.data._id El id unico.
+ * @param {string} props.data.desc Una descripcion de la informacion.
+ * @description El componente central de la aplicacion, renderiza la raiz del proyecto. haciendo una llamada a la base de datos con la funcion {@link home}.
+ */
+ function Home({ data }) {
   return (
     <div>
       <Head>
@@ -18,7 +37,6 @@ export default function Home({ data }) {
         <Link href="/new">
           <a className="btn btn-primary w-100 mb-3">Agregar</a>
         </Link>
-
         {data.map(({ title, _id, desc }) => (
           <div className="card mb-2" key={_id}>
             <div className="card-body">
@@ -39,7 +57,12 @@ export default function Home({ data }) {
     </div>
   );
 }
-
+/**
+ * @alias home
+ * @description getServerSideProps() Va a realizar una busqueda a la base de datos. y se va a traer todas las colecciones de la tabla data. Usando mongoose.
+ * @category getServerSideProps
+ * @returns {Promise<any>} Toda las tablas de data.
+ */
 export async function getServerSideProps() {
   try {
     await mongo();
@@ -53,4 +76,6 @@ export async function getServerSideProps() {
   } catch (error) {
     console.log(error);
   }
-}
+} 
+
+export default Home;
