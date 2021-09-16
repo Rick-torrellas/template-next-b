@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Global</title>
+  <title> pages/api/data/[id].js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,304 +79,129 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Title</p>
-                    <h1>Global</h1>
+                    <p>Source</p>
+                    <h1>pages/api/data/[id].js</h1>
                 </header>
                 
 
 
 
-
-<section>
-
-<header>
-    
-        <h2></h2>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-        
-    
-    </div>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class='vertical-section'>
-            <h1>Members</h1>
-            <div class="members">
-            
-                <div class="member">
-
-<h4 class="name" id="Form">
-    <a class="href-link" href="#Form">#</a>
-    
-    <span class="code-name">
-        Form
-    </span>
-    
-</h4>
-
-
-
-
-<div class="description">
-    <p>El componente encargado de contener el formulario y toda su logistica.</p>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-    <dt class="tag-todo">To Do:</dt>
-    <dd class="tag-todo">
-        <ul>
-            <li>//FIXME: Problemas al comentar el componente Form, me dice que la propiedad name de no se que quien es undefined.</li>
-        </ul>
-    </dd>
-    
-
-    
-        <p class="tag-source">
-            <a href="components_Form.js.html" class="button">View Source</a>
-            <span>
-                <a href="components_Form.js.html">components/Form.js</a>, <a href="components_Form.js.html#line15">line 15</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-</div>
-            
-            </div>
-        </div>
-    
-
-    
-        <div class='vertical-section'>
-            <h1>Methods</h1>
-            <div class="members">
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="home">
-        <a class="href-link" href="#home">#</a>
-        
-        <span class="code-name">
-            
-                home<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;any>}</span>
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>getServerSideProps() Va a realizar una busqueda a la base de datos. y se va a traer todas las colecciones de la tabla data. Usando mongoose.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
     
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="pages_index.js.html" class="button">View Source</a>
-            <span>
-                <a href="pages_index.js.html">pages/index.js</a>, <a href="pages_index.js.html#line67">line 67</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    <div class='param-desc column is-7'><p>Toda las tablas de data.</p></div>
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Promise.&lt;any></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-            </div>
-        </div>
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>//@ts-check
+/**
+ * @file 
+ * @description La entrada de la api, para gestionar una data en la base de datos.
+ * @requires /mongo 
+ * @requires /Data 
+ */
+import mongo from "../../../lib/mongo";
+import Data from "../../../models/Data";
+/**
+ * @alias /api/data/:id
+ * @category API
+ * @description Esta funcion se encarga gestionar la informacion de la cooleccion, usando el parametro id.
+ * @param {Object} res 
+ * @param {object} req 
+ * @returns {Promise&lt;any>}
+ * @namespace
+ */
+export default async function handler(req, res) {
+  const {
+    method,
+    query: { id },
+  } = req;
+  await mongo();
+
+  switch (method) {
+/**
+ * @name findDataById
+ * @category API
+ * @description Va a econtrar solo una coleccion con el id espesificado.
+ * @path {GET} /api/data/:id
+ * @params {string} :id el campo id es un campo unico generado por mongodb.
+ * @response {Object} data Es la coleccion encontrada..
+ * @code {200} Cuando el proceso es exitoso, y la data es enviada.
+ * @code {400} Si 'data' no fue definida.
+ * @code {400} En caso de encontrar algun error.
+ * @see {@link DataSchema} Para mas informacion sobre el estructura de 'data'.  
+ * @memberof /api/data/:id
+ * 
+ */
+    case "GET":
+      try {
+        const data = await Data.findById(id);
+
+        if (!data) {
+          return res.status(400).json({ success: false });
+        }
+        res.status(200).json({ success: true, data: data });
+      } catch (error) {
+        res.status(400).json({ success: false });
+      }
+      break;
+/**
+ * @name findDataByIdAndUpdate
+ * @category API
+ * @description Va a encontrar una sola coleccion usando el id que se mando por parametro, y luego se va a actualizar con la informacion que se mando en el body. Usando esa informacion para mandarlo a la base de datos.
+ * @path {PUT} /api/data/:id
+ * @params {string} :id el campo id es un campo unico generado por mongodb.
+ * @body {string} _id El id unico de cada coleccion 'data'.
+ * @body {string} title El titulo de la coleccion.
+ * @body {string} desc La descripcion de la coleccion.
+ * @response {Object} data Las colecciones que seran editadas.
+ * @code {200} Cuando el proceso es exitoso y se envia la data para editarse.
+ * @code {400} Si 'data' no fue definida.
+ * @code {400} En caso de encontrar algun error.
+ * @see {@link DataSchema} Para mas informacion sobre el estructura de 'data'.  
+ * @memberof /api/data/:id
+ */
+    case "PUT":
+      try {
+        const data = await Data.findByIdAndUpdate(id, req.body, {
+          new: true,
+          runValidators: true,
+        });
+        if (!data) {
+          return res.status(400).json({ success: false });
+        }
+        res.status(200).json({ success: true, data: data });
+      } catch (error) {
+        res.status(400).json({ success: false });
+      }
+      break;
+/**
+ * @name deleteData
+ * @category API
+ * @description Se va a buscar una coleccion usando el id mandado por los parametros y se va a eliminar dicha coleccion.
+ * @path {DELETE} /api/data/:id
+ * @params {string} :id el campo id es un campo unico generado por mongodb.
+ * @code {200} Cuando el proceso es exitoso y la coleccion fue eliminada.
+ * @code {400} Si 'data' no fue definida.
+ * @code {400} En caso de encontrar algun error.
+ * @see {@link DataSchema} Para mas informacion sobre el estructura de 'data'.  
+ * @memberof /api/data/:id
+ */
+    case "DELETE":
+      try {
+        const data = await Data.deleteOne({ _id: id });
+        if (!data) {
+          return res.status(400).json({ success: false });
+        }
+        res.status(200).json({ success: true, data: {} });
+      } catch (error) {
+        res.status(400).json({ success: false });
+      }
+      break;
+    default:
+      res.status(400).json({ success: false });
+      break;
+  }
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

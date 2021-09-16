@@ -1,9 +1,23 @@
+//@ts-check
+/**
+ * @file
+ * @description Contiene el componente del formulario para "data".
+ * @requires (useState)react
+ * @requires (useRouter)next/router
+ * @requires next/link
+ * @requires (mutate)swr
+ * @todo //FIXME: Problemas al comentar el componente {@link Form}, me dice que la propiedad name de no se que quien es undefined.
+ */
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { mutate } from "swr";
-
-export default function Form({ forNewData = true, dataForm }) {
+/**
+ * @name Form
+ * @description El componente encargado de contener el formulario y toda su logistica.
+ * @todo //FIXME: Problemas al comentar el componente Form, me dice que la propiedad name de no se que quien es undefined.
+ */
+function Form({ forNewData = true, dataForm }) {
   const router = useRouter();
   const [message, setMessage] = useState("");
   const [form, setForm] = useState({
@@ -22,7 +36,8 @@ export default function Form({ forNewData = true, dataForm }) {
         body: JSON.stringify(form),
       });
       if (!res.ok) {
-        throw new Error(res.status);
+        // @ts-ignore
+        throw new Error(res.status); //@ts
       }
       const { data } = await res.json();
       mutate(`/api/data/${id}`, data, false);
@@ -45,6 +60,7 @@ export default function Form({ forNewData = true, dataForm }) {
 
       console.log(res);
       if (!res.ok) {
+        // @ts-ignore
         throw new Error(res.status);
       }
 
@@ -106,3 +122,5 @@ export default function Form({ forNewData = true, dataForm }) {
     </div>
   );
 }
+
+export default Form; 

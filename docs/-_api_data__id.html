@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> /api/data/:id</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">My React components</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-mongo.html">mongo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Form">Form</a></li></ul></div><div class="category"><h2>API</h2><h3>Namespaces</h3><ul><li><a href="-_api_data.html">/api/data</a></li><li><a href="-_api_data__id.html">/api/data/:id</a></li></ul></div><div class="category"><h2>Data Models</h2><h3>Namespaces</h3><ul><li><a href="DataSchema.html">DataSchema</a></li></ul></div><div class="category"><h2>Pages</h2><h3>Components</h3><ul><li><a href="Home.html">Home</a></li><li><a href="New.html">New</a></li></ul></div><div class="category"><h2>getServerSideProps</h2><h3>Global</h3><ul><li><a href="global.html#home">home</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Namespace</p>
+                    <h1>/api/data/:id</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>/api/data/:id<span class="signature">(res, req)</span><span class="type-signature"> &rarr; {Promise.&lt;any>}</span></h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            
+
+
+    
+
+    
+    
+    <div class="description">
+        <p>Esta funcion se encarga gestionar la informacion de la cooleccion, usando el parametro id.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>res</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>req</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="pages_api_data_%5Bid%5D.js.html" class="button">View Source</a>
+            <span>
+                <a href="pages_api_data_%5Bid%5D.js.html">pages/api/data/[id].js</a>, <a href="pages_api_data_%5Bid%5D.js.html#line19">line 19</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;any></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+<h4 class="name" id="deleteData">
+    <a class="href-link" href="#deleteData">#</a>
+    
+        
+            <span class='tag'>route</span>
+        
+    
+    <span class="code-name">
+        deleteData
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">DELETE</td>
+                            <td class="name last">/api/data/:id</td>
+                            </tr>
+                            </table>
+                            <p>Se va a buscar una coleccion usando el id mandado por los parametros y se va a eliminar dicha coleccion.</p>
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">:id</td>
+            <td class="type">string</td>
+            
+            
+            <td class="description last"><p>el campo id es un campo unico generado por mongodb.</p></td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">Cuando el proceso es exitoso y la coleccion fue eliminada.</td>
+          </tr><tr>
+            
+            <td class="type">400</td>
+            
+            
+            <td class="description last">Si 'data' no fue definida.</td>
+          </tr><tr>
+            
+            <td class="type">400</td>
+            
+            
+            <td class="description last">En caso de encontrar algun error.</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="DataSchema.html"><code>DataSchema</code></a> Para mas informacion sobre el estructura de 'data'.</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="pages_api_data_%5Bid%5D.js.html" class="button">View Source</a>
+            <span>
+                <a href="pages_api_data_%5Bid%5D.js.html">pages/api/data/[id].js</a>, <a href="pages_api_data_%5Bid%5D.js.html#line83">line 83</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+<h4 class="name" id="findDataById">
+    <a class="href-link" href="#findDataById">#</a>
+    
+        
+            <span class='tag'>route</span>
+        
+    
+    <span class="code-name">
+        findDataById
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">GET</td>
+                            <td class="name last">/api/data/:id</td>
+                            </tr>
+                            </table>
+                            <p>Va a econtrar solo una coleccion con el id espesificado.</p>
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">:id</td>
+            <td class="type">string</td>
+            
+            
+            <td class="description last"><p>el campo id es un campo unico generado por mongodb.</p></td>
+          </tr>
+          </table>
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">data</td>
+            <td class="type">Object</td>
+            
+            
+            <td class="description last">Es la coleccion encontrada..</td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">Cuando el proceso es exitoso, y la data es enviada.</td>
+          </tr><tr>
+            
+            <td class="type">400</td>
+            
+            
+            <td class="description last">Si 'data' no fue definida.</td>
+          </tr><tr>
+            
+            <td class="type">400</td>
+            
+            
+            <td class="description last">En caso de encontrar algun error.</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="DataSchema.html"><code>DataSchema</code></a> Para mas informacion sobre el estructura de 'data'.</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="pages_api_data_%5Bid%5D.js.html" class="button">View Source</a>
+            <span>
+                <a href="pages_api_data_%5Bid%5D.js.html">pages/api/data/[id].js</a>, <a href="pages_api_data_%5Bid%5D.js.html#line27">line 27</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+<h4 class="name" id="findDataByIdAndUpdate">
+    <a class="href-link" href="#findDataByIdAndUpdate">#</a>
+    
+        
+            <span class='tag'>route</span>
+        
+    
+    <span class="code-name">
+        findDataByIdAndUpdate
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">PUT</td>
+                            <td class="name last">/api/data/:id</td>
+                            </tr>
+                            </table>
+                            <p>Va a encontrar una sola coleccion usando el id que se mando por parametro, y luego se va a actualizar con la informacion que se mando en el body. Usando esa informacion para mandarlo a la base de datos.</p>
+                            <h5>Body Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">_id</td>
+            <td class="type">string</td>
+            
+            
+            <td class="description last">El id unico de cada coleccion 'data'.</td>
+          </tr><tr>
+            <td class="name">title</td>
+            <td class="type">string</td>
+            
+            
+            <td class="description last">El titulo de la coleccion.</td>
+          </tr><tr>
+            <td class="name">desc</td>
+            <td class="type">string</td>
+            
+            
+            <td class="description last">La descripcion de la coleccion.</td>
+          </tr>
+          </table>
+                            <h5>Route Parameters:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">:id</td>
+            <td class="type">string</td>
+            
+            
+            <td class="description last"><p>el campo id es un campo unico generado por mongodb.</p></td>
+          </tr>
+          </table>
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">data</td>
+            <td class="type">Object</td>
+            
+            
+            <td class="description last">Las colecciones que seran editadas.</td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">Cuando el proceso es exitoso y se envia la data para editarse.</td>
+          </tr><tr>
+            
+            <td class="type">400</td>
+            
+            
+            <td class="description last">Si 'data' no fue definida.</td>
+          </tr><tr>
+            
+            <td class="type">400</td>
+            
+            
+            <td class="description last">En caso de encontrar algun error.</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="DataSchema.html"><code>DataSchema</code></a> Para mas informacion sobre el estructura de 'data'.</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="pages_api_data_%5Bid%5D.js.html" class="button">View Source</a>
+            <span>
+                <a href="pages_api_data_%5Bid%5D.js.html">pages/api/data/[id].js</a>, <a href="pages_api_data_%5Bid%5D.js.html#line53">line 53</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+</body>
+</html>

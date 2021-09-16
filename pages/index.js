@@ -10,11 +10,12 @@
  */
 const debug = require("debug")("debug");
 import Head from "next/head";
-import mongo from "../db/mongo";
+import mongo from "../lib/mongo";
 import Data from "../models/Data";
 import Link from "next/link";
 /**
  * @component
+ * @category Pages
  * @param {Object} props
  * @param {Object} props.data La informacion recibida de la base de datos. informacion generica del template
  * @param {string} props.data.title El titulo de la informacion.

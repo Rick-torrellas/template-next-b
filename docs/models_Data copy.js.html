@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> components/test.js</title>
+  <title> models/Data copy.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-mongo.html">mongo</a></li></ul><h3>Components</h3><ul><li><a href="Home.html">Home</a></li></ul><h3>Global</h3><ul><li><a href="global.html">findDatas</a></li><li><a href="global.html#nani">nani</a></li></ul></div><div class="category"><h2>API</h2><h3>Global</h3><ul><li><a href="global.html">deleteData</a></li><li><a href="global.html">findDataById</a></li><li><a href="global.html">findDataByIdAndUpdate</a></li></ul></div><div class="category"><h2>Data Models</h2><h3>Namespaces</h3><ul><li><a href="DataSchema.html">DataSchema</a></li></ul></div><div class="category"><h2>getServerSideProps</h2><h3>Global</h3><ul><li><a href="global.html#home">home</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-mongo.html">mongo</a></li></ul><h3>Components</h3><ul><li><a href="Home.html">Home</a></li></ul><h3>Global</h3><ul><li><a href="global.html">findDatas</a></li><li><a href="global.html#nani">nani</a></li></ul></div><div class="category"><h2>API</h2><h3>Global</h3><ul><li><a href="global.html">findDataById</a></li><li><a href="global.html">findDataByIdAndUpdate</a></li></ul></div><div class="category"><h2>Data Models</h2><h3>Namespaces</h3><ul><li><a href="DataSchema.html">DataSchema</a></li><li><a href="DataxxxSchema.html">DataxxxSchema</a></li></ul></div><div class="category"><h2>getServerSideProps</h2><h3>Global</h3><ul><li><a href="global.html#home">home</a></li></ul></div>
                 
             </nav>
         </div>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>components/test.js</h1>
+                    <h1>models/Data copy.js</h1>
                 </header>
                 
 
@@ -91,12 +91,38 @@
         <article>
             <pre class="prettyprint source linenums"><code>//@ts-check
 /**
- * @description Ola
- * @returns {void}
+ * @file
+ * @description Va a contener el modelo de datos Data. Un modelo por defecto del template.
+ * @requires mongoose
  */
-function nani(){
-    return 
-}</code></pre>
+import mongoose from "mongoose";
+/**
+ * @type {any}
+ * @description Contendra el esquema de datos para mongodb, es el esquema por defecto del template.
+ * @category Data Models
+ * @namespace
+ */
+const DataxxxSchema = new mongoose.Schema({
+  /**
+   * @description El titulo de la data.
+   * @memberof DataxxxSchema
+   */
+  title: {
+    type: String,
+    required: [true, "Por favor ingrese título"],
+  },
+    /**
+   * @description La descripcion de la data.
+   * @memberof DataxxxSchema
+   */
+  desc: {
+    type: String,
+    required: [true, "Por favor ingrese descripción"],
+  },
+});
+
+export default mongoose.models.Data || mongoose.model("Data", DataSchema);
+</code></pre>
         </article>
     </section>
 

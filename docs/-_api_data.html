@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Global</title>
+  <title> /api/data</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,8 +77,8 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Title</p>
-                    <h1>Global</h1>
+                    <p>Namespace</p>
+                    <h1>/api/data</h1>
                 </header>
                 
 
@@ -89,7 +89,7 @@
 
 <header>
     
-        <h2></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>/api/data<span class="signature">(res, req)</span><span class="type-signature"> &rarr; {Promise.&lt;any>}</span></h2>
         
     
 </header>
@@ -98,170 +98,15 @@
     <div class="container-overview">
     
         
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-        
-    
-    </div>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class='vertical-section'>
-            <h1>Members</h1>
-            <div class="members">
             
-                <div class="member">
-
-<h4 class="name" id="Form">
-    <a class="href-link" href="#Form">#</a>
-    
-    <span class="code-name">
-        Form
-    </span>
-    
-</h4>
 
 
-
-
-<div class="description">
-    <p>El componente encargado de contener el formulario y toda su logistica.</p>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-    <dt class="tag-todo">To Do:</dt>
-    <dd class="tag-todo">
-        <ul>
-            <li>//FIXME: Problemas al comentar el componente Form, me dice que la propiedad name de no se que quien es undefined.</li>
-        </ul>
-    </dd>
-    
-
-    
-        <p class="tag-source">
-            <a href="components_Form.js.html" class="button">View Source</a>
-            <span>
-                <a href="components_Form.js.html">components/Form.js</a>, <a href="components_Form.js.html#line15">line 15</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-</div>
-            
-            </div>
-        </div>
-    
-
-    
-        <div class='vertical-section'>
-            <h1>Methods</h1>
-            <div class="members">
-            
-                <div class="member">
-
-
-    
-    <h4 class="name" id="home">
-        <a class="href-link" href="#home">#</a>
-        
-        <span class="code-name">
-            
-                home<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;any>}</span>
-            
-        </span>
-    </h4>
     
 
     
     
     <div class="description">
-        <p>getServerSideProps() Va a realizar una busqueda a la base de datos. y se va a traer todas las colecciones de la tabla data. Usando mongoose.</p>
+        <p>Esta funcion se encarga gestionar la informacion de la cooleccion, usando el parametro id. Mas que nada recibir y manadar datos.</p>
     </div>
     
 
@@ -272,6 +117,82 @@
 
 
 
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>res</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>req</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -310,9 +231,9 @@
 
     
         <p class="tag-source">
-            <a href="pages_index.js.html" class="button">View Source</a>
+            <a href="pages_api_data_index.js.html" class="button">View Source</a>
             <span>
-                <a href="pages_index.js.html">pages/index.js</a>, <a href="pages_index.js.html#line67">line 67</a>
+                <a href="pages_api_data_index.js.html">pages/api/data/index.js</a>, <a href="pages_api_data_index.js.html#line19">line 19</a>
             </span>
         </p>
     
@@ -343,8 +264,6 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>Toda las tablas de data.</p></div>
-    
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
@@ -363,10 +282,164 @@
 
 
 
+
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+<h4 class="name" id="enviarData">
+    <a class="href-link" href="#enviarData">#</a>
+    
+        
+            <span class='tag'>route</span>
+        
+    
+    <span class="code-name">
+        enviarData
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <h5>Route:</h5>
+                            <table class="params">
+                            <thead><tr><th>Method</th><th class="last">Path</th></tr></thead>
+                            <tr>
+                            <td class="type">POST</td>
+                            <td class="name last">/api/data</td>
+                            </tr>
+                            </table>
+                            <p>Va a crear una nueva coleccion.</p>
+                            <h5>Response:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            <td class="name">Con</td>
+            <td class="type">Object</td>
+            
+            
+            <td class="description last">la nueva coleccion.</td>
+          </tr>
+          </table>
+                            <h5>Response Code:</h5>
+          <table class="params">
+            <thead>
+              <tr>
+                
+                <th>Type</th>
+                
+                
+                <th class="last">Description</th>
+              </tr>
+            </thead>
+            <tr>
+            
+            <td class="type">200</td>
+            
+            
+            <td class="description last">Cuando el proceso es exitoso, y la data es enviada.</td>
+          </tr><tr>
+            
+            <td class="type">400</td>
+            
+            
+            <td class="description last">En caso de encontrar algun error.</td>
+          </tr>
+          </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="DataSchema.html"><code>DataSchema</code></a> Para mas informacion sobre el estructura de 'data'.</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="pages_api_data_index.js.html" class="button">View Source</a>
+            <span>
+                <a href="pages_api_data_index.js.html">pages/api/data/index.js</a>, <a href="pages_api_data_index.js.html#line45">line 45</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
 </div>
             
             </div>
         </div>
+    
+
     
 
     

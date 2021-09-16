@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> components/test.js</title>
+  <title> lib/mongo.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-mongo.html">mongo</a></li></ul><h3>Components</h3><ul><li><a href="Home.html">Home</a></li></ul><h3>Global</h3><ul><li><a href="global.html">findDatas</a></li><li><a href="global.html#nani">nani</a></li></ul></div><div class="category"><h2>API</h2><h3>Global</h3><ul><li><a href="global.html">deleteData</a></li><li><a href="global.html">findDataById</a></li><li><a href="global.html">findDataByIdAndUpdate</a></li></ul></div><div class="category"><h2>Data Models</h2><h3>Namespaces</h3><ul><li><a href="DataSchema.html">DataSchema</a></li></ul></div><div class="category"><h2>getServerSideProps</h2><h3>Global</h3><ul><li><a href="global.html#home">home</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-mongo.html">mongo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Form">Form</a></li></ul></div><div class="category"><h2>API</h2><h3>Namespaces</h3><ul><li><a href="-_api_data.html">/api/data</a></li><li><a href="-_api_data__id.html">/api/data/:id</a></li></ul></div><div class="category"><h2>Data Models</h2><h3>Namespaces</h3><ul><li><a href="DataSchema.html">DataSchema</a></li></ul></div><div class="category"><h2>Pages</h2><h3>Components</h3><ul><li><a href="Home.html">Home</a></li><li><a href="New.html">New</a></li></ul></div><div class="category"><h2>getServerSideProps</h2><h3>Global</h3><ul><li><a href="global.html#home">home</a></li></ul></div>
                 
             </nav>
         </div>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>components/test.js</h1>
+                    <h1>lib/mongo.js</h1>
                 </header>
                 
 
@@ -91,12 +91,58 @@
         <article>
             <pre class="prettyprint source linenums"><code>//@ts-check
 /**
- * @description Ola
- * @returns {void}
+ * @module mongo 
+ * @description Este es el modulo encargado de conectarse a mongodb, usando mongoose.
+ * @requires mongoose
  */
-function nani(){
-    return 
-}</code></pre>
+import mongoose from "mongoose";
+/**
+ * @type {string}
+ * @description Es la uri para conectarse con mongodb, es una variablde de entorno llamada 'MONGODB_URI', cargada desde un archivo '.env.local' en la raiz de la aplicacion. 
+ * @constant
+ */
+const MONGODB_URI = process.env.MONGODB_URI;
+
+if (!MONGODB_URI) {
+  throw new Error("Agregue un mongodb uri");
+}
+/**
+ * @type {any}
+ * @description La verdad no se que es lo que hace.
+ */
+let cached = global.mongoose;
+
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
+/**
+ * 
+ * @returns {Promise&lt;any>}
+ * @description Es la funcion encargada de conectarse a mongodb, usando la variable {@link MONGODB_URI}.
+ */
+const mongo = async () => {
+  if (cached.conn) {
+    return cached.conn;
+  }
+
+  if (!cached.promise) {
+    const opts = {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      bufferCommands: false,
+      bufferMaxEntries: 0,
+      useFindAndModify: false,
+      useCreateIndex: true,
+    };
+    cached.promise = mongoose
+      .connect(MONGODB_URI, opts)
+      .then((mongoose) => mongoose);
+  }
+  cached.conn = await cached.promise;
+  return cached.conn;
+};
+export default mongo;
+</code></pre>
         </article>
     </section>
 

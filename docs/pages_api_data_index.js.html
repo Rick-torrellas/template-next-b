@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> components/test.js</title>
+  <title> pages/api/data/index.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-mongo.html">mongo</a></li></ul><h3>Components</h3><ul><li><a href="Home.html">Home</a></li></ul><h3>Global</h3><ul><li><a href="global.html">findDatas</a></li><li><a href="global.html#nani">nani</a></li></ul></div><div class="category"><h2>API</h2><h3>Global</h3><ul><li><a href="global.html">deleteData</a></li><li><a href="global.html">findDataById</a></li><li><a href="global.html">findDataByIdAndUpdate</a></li></ul></div><div class="category"><h2>Data Models</h2><h3>Namespaces</h3><ul><li><a href="DataSchema.html">DataSchema</a></li></ul></div><div class="category"><h2>getServerSideProps</h2><h3>Global</h3><ul><li><a href="global.html#home">home</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-mongo.html">mongo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Form">Form</a></li></ul></div><div class="category"><h2>API</h2><h3>Namespaces</h3><ul><li><a href="-_api_data.html">/api/data</a></li><li><a href="-_api_data__id.html">/api/data/:id</a></li></ul></div><div class="category"><h2>Data Models</h2><h3>Namespaces</h3><ul><li><a href="DataSchema.html">DataSchema</a></li></ul></div><div class="category"><h2>Pages</h2><h3>Components</h3><ul><li><a href="Home.html">Home</a></li><li><a href="New.html">New</a></li></ul></div><div class="category"><h2>getServerSideProps</h2><h3>Global</h3><ul><li><a href="global.html#home">home</a></li></ul></div>
                 
             </nav>
         </div>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>components/test.js</h1>
+                    <h1>pages/api/data/index.js</h1>
                 </header>
                 
 
@@ -91,12 +91,74 @@
         <article>
             <pre class="prettyprint source linenums"><code>//@ts-check
 /**
- * @description Ola
- * @returns {void}
+ * @file 
+ * @description El archivo principal para la entrada data en la api.
+ * @requires /mongo 
+ * @requires /Data 
  */
-function nani(){
-    return 
-}</code></pre>
+import mongo from "../../../lib/mongo";
+import Data from "../../../models/Data";
+/**
+ * @alias /api/data
+ * @category API
+ * @description Esta funcion se encarga gestionar la informacion de la cooleccion, usando el parametro id. Mas que nada recibir y manadar datos.
+ * @param {Object} res 
+ * @param {object} req 
+ * @returns {Promise&lt;any>}
+ * @namespace
+ */
+export default async function handler(req, res) {
+  const { method } = req;
+  await mongo();
+
+  switch (method) 
+  {
+/**
+ * @name getData
+ * @category API
+ * @description Va a encontrar todas las colecciones de la tabla.
+ * @path {GET} /api/data
+ * @response {Object} data Son las solecciones de la tabla data.
+ * @code {200} Cuando el proceso es exitoso, y las colecciones son recibidas.
+ * @code {400} En caso de encontrar algun error.
+ * @see {@link DataSchema} Para mas informacion sobre el estructura de 'data'.  
+ * @memberof /api/data
+ * :
+ */
+    case "GET":
+      try {
+        const data = await Data.find({});
+        res.status(200).json({ success: true, data: data });
+      } catch (error) {
+        res.status(400).json({ success: false });
+      }
+      break;
+/**
+ * @name enviarData
+ * @category API
+ * @description Va a crear una nueva coleccion.
+ * @path {POST} /api/data
+ * @response {Object} Con la nueva coleccion.
+ * @code {200} Cuando el proceso es exitoso, y la data es enviada.
+ * @code {400} En caso de encontrar algun error.
+ * @see {@link DataSchema} Para mas informacion sobre el estructura de 'data'.  
+ * @memberof /api/data
+ * 
+ */
+    case "POST":
+      try {
+        const data = await Data.create(req.body);
+        res.status(200).json({ success: true, data: data });
+      } catch (error) {
+        res.status(400).json({ success: false, error });
+      }
+      break;
+    default:
+      res.status(400).json({ success: false });
+      break;
+  }
+}
+</code></pre>
         </article>
     </section>
 

@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Global</title>
+  <title> mongo</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,8 +77,8 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Title</p>
-                    <h1>Global</h1>
+                    <p>Module</p>
+                    <h1>mongo</h1>
                 </header>
                 
 
@@ -89,7 +89,8 @@
 
 <header>
     
-        <h2></h2>
+        
+            
         
     
 </header>
@@ -98,8 +99,23 @@
     <div class="container-overview">
     
         
+            <div class="description"><p>Este es el modulo encargado de conectarse a mongodb, usando mongoose.</p></div>
+        
 
         
+            
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <dl class="details">
@@ -134,7 +150,34 @@
     
 
     
+        <p class="tag-source">
+            <a href="lib_mongo.js.html" class="button">View Source</a>
+            <span>
+                <a href="lib_mongo.js.html">lib/mongo.js</a>, <a href="lib_mongo.js.html#line2">line 2</a>
+            </span>
+        </p>
+    
 </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         
@@ -143,6 +186,12 @@
     
     
 
+    
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li>module:mongoose</li>
+        </ul>
     
 
     
@@ -160,11 +209,23 @@
             
                 <div class="member">
 
-<h4 class="name" id="Form">
-    <a class="href-link" href="#Form">#</a>
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">any</span>
+
+
+    </span>
+
+<h4 class="name" id="~cached">
+    <a class="href-link" href="#~cached">#</a>
+    
+        
+            <span class='tag'>inner</span>
+        
     
     <span class="code-name">
-        Form
+        cached
     </span>
     
 </h4>
@@ -173,7 +234,7 @@
 
 
 <div class="description">
-    <p>El componente encargado de contener el formulario y toda su logistica.</p>
+    <p>La verdad no se que es lo que hace.</p>
 </div>
 
 
@@ -210,19 +271,95 @@
     
 
     
-    <dt class="tag-todo">To Do:</dt>
-    <dd class="tag-todo">
-        <ul>
-            <li>//FIXME: Problemas al comentar el componente Form, me dice que la propiedad name de no se que quien es undefined.</li>
-        </ul>
-    </dd>
+
+    
+        <p class="tag-source">
+            <a href="lib_mongo.js.html" class="button">View Source</a>
+            <span>
+                <a href="lib_mongo.js.html">lib/mongo.js</a>, <a href="lib_mongo.js.html#line22">line 22</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">string</span>
+
+
+    </span>
+
+<h4 class="name" id="~MONGODB_URI">
+    <a class="href-link" href="#~MONGODB_URI">#</a>
+    
+        
+            <span class='tag'>inner</span>
+        
+            <span class='tag'>constant</span>
+        
+    
+    <span class="code-name">
+        MONGODB_URI
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Es la uri para conectarse con mongodb, es una variablde de entorno llamada 'MONGODB_URI', cargada desde un archivo '.env.local' en la raiz de la aplicacion.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
     
 
     
         <p class="tag-source">
-            <a href="components_Form.js.html" class="button">View Source</a>
+            <a href="lib_mongo.js.html" class="button">View Source</a>
             <span>
-                <a href="components_Form.js.html">components/Form.js</a>, <a href="components_Form.js.html#line15">line 15</a>
+                <a href="lib_mongo.js.html">lib/mongo.js</a>, <a href="lib_mongo.js.html#line13">line 13</a>
             </span>
         </p>
     
@@ -247,12 +384,18 @@
 
 
     
-    <h4 class="name" id="home">
-        <a class="href-link" href="#home">#</a>
+    <h4 class="name" id="~mongo">
+        <a class="href-link" href="#~mongo">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+                <span class='tag'>inner</span>
+            
         
         <span class="code-name">
             
-                home<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;any>}</span>
+                mongo<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;any>}</span>
             
         </span>
     </h4>
@@ -261,7 +404,7 @@
     
     
     <div class="description">
-        <p>getServerSideProps() Va a realizar una busqueda a la base de datos. y se va a traer todas las colecciones de la tabla data. Usando mongoose.</p>
+        <p>Es la funcion encargada de conectarse a mongodb, usando la variable <code>MONGODB_URI</code>.</p>
     </div>
     
 
@@ -310,9 +453,9 @@
 
     
         <p class="tag-source">
-            <a href="pages_index.js.html" class="button">View Source</a>
+            <a href="lib_mongo.js.html" class="button">View Source</a>
             <span>
-                <a href="pages_index.js.html">pages/index.js</a>, <a href="pages_index.js.html#line67">line 67</a>
+                <a href="lib_mongo.js.html">lib/mongo.js</a>, <a href="lib_mongo.js.html#line32">line 32</a>
             </span>
         </p>
     
@@ -342,8 +485,6 @@
                     
 
 <div class="columns">
-    
-    <div class='param-desc column is-7'><p>Toda las tablas de data.</p></div>
     
     
     <div class='column is-5 has-text-left'>

@@ -3,7 +3,8 @@
     "include": [
       "pages",
       "components",
-      "models"
+      "models",
+      "lib"
     ],
     "includePattern": ".js$",
     "excludePattern": "(node_modules|docs)"

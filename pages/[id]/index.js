@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import mongo from "../../db/mongo";
+import mongo from "../../lib/mongo";
 import Data from "../../models/Data";
 
 export default function Index({ data }) {
