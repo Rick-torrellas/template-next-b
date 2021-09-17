@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
-import Form from "../../components/Form";
+import Form from "./../../../components/Form";
 
 const fetcher = (url) =>
   fetch(url)
@@ -8,7 +8,6 @@ const fetcher = (url) =>
     .then((json) => json.data);
 
 export default function Edit() {
-  // solo obtener data para enviar al form
   const router = useRouter();
   const { id } = router.query;
   const { data: data, error } = useSWR(

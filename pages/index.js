@@ -44,10 +44,10 @@ import Link from "next/link";
               <p className="text-uppercase h5">{title}</p>
               <p className="fw-light">{desc}</p>
               <div>
-                <Link href="/[id]/edit" as={`/${_id}/edit`}>
+                <Link href="/data/[id]/edit" as={`/data/${_id}/edit`}>
                   <a className="btn btn-warning me-2">Editar</a>
                 </Link>
-                <Link href="/[id]" as={`/${_id}`}>
+                <Link href="/data/[id]" as={`/data/${_id}`}>
                   <a className="btn btn-info">Visualizar</a>
                 </Link>
               </div>

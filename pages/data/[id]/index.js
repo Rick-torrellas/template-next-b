@@ -1,10 +1,25 @@
+/**
+ * @file
+ * @description Contiene un componente que muestra un solo elemento de la base de datos.
+ * @requires next/link
+ * @requires (useRouter)next/router
+ * @requires (useState)react
+ * @requires /mongo
+ * @requires /Data
+ * @see OneData
+ */
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import mongo from "../../lib/mongo";
-import Data from "../../models/Data";
-
-export default function Index({ data }) {
+import mongo from "./../../../lib/mongo";
+import Data from "./../../../models/Data";
+/**
+ * @component
+ * @category Pages
+ * @param {Object} props
+ * @param {Object} props.data 
+ */
+ function OneData({ data }) {
   const router = useRouter();
   const [message, setMessage] = useState("");
 
@@ -29,9 +44,12 @@ export default function Index({ data }) {
             <h5>{data.title}</h5>
           </div>
           <p className="fw-light">{data.desc}</p>
-          <Link href="/[id]/edit" as={`/${data._id}/edit`}>
+          <Link href="/data/[id]/edit" as={`/data/${data._id}/edit`}>
             <a className="btn btn-warning me-2">Editar</a>
           </Link>
+          <Link href="/">
+          <a className="btn btn-warning my-3">Volver</a>
+        </Link>
           <button className="btn btn-danger" onClick={handleDelete}>
             Eliminar
           </button>
@@ -45,7 +63,6 @@ export default function Index({ data }) {
 export async function getServerSideProps({ params }) {
   try {
     await mongo();
-    // https://mongoosejs.com/docs/tutorials/lean.html
     const data = await Data.findById(params.id).lean();
     data._id = data._id.toString();
     return { props: { data } };
@@ -53,3 +70,4 @@ export async function getServerSideProps({ params }) {
     console.log("error", error);
   }
 }
+export default OneData;

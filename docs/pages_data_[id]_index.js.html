@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> New</title>
+  <title> pages/data/[id]/index.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,164 +79,91 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Components</p>
-                    <h1>New</h1>
+                    <p>Source</p>
+                    <h1>pages/data/[id]/index.js</h1>
                 </header>
                 
 
 
 
-
-<section>
-
-<header>
     
-        <h2>
-            &ltNew  /&gt
-        </h2>
-        
-    
-</header>
-
-<article>
-    <div class="container-overview">
-    
-        
-            <div class='vertical-section'>
-                <div class="members">
-                    <div class="member">
-                        <div class=name>
-                            <span class="tag">Constructor</span>
-                        </div>
-                        
-
-
-    
-    <h4 class="name" id="New">
-        <a class="href-link" href="#New">#</a>
-        
-        <span class="code-name">
-            
-                &ltNew  /&gt
-            
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <p>Va a renderizar el componente del forlumario, el cual trae toda la logistica para conectarse a la base de datos <a href="global.html#Form"><code>Form</code></a>.</p>
-    </div>
-    
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="pages_new.js.html" class="button">View Source</a>
-            <span>
-                <a href="pages_new.js.html">pages/new.js</a>, <a href="pages_new.js.html#line13">line 13</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-                </div>
-            </div>
-        
-    
-    </div>
-    
-        
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file
+ * @description Contiene un componente que muestra un solo elemento de la base de datos.
+ * @requires next/link
+ * @requires (useRouter)next/router
+ * @requires (useState)react
+ * @requires /mongo
+ * @requires /Data
+ * @see OneData
+ */
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import mongo from "./../../../lib/mongo";
+import Data from "./../../../models/Data";
+/**
+ * @component
+ * @category Pages
+ * @param {Object} props
+ * @param {Object} props.data 
+ */
+ function OneData({ data }) {
+  const router = useRouter();
+  const [message, setMessage] = useState("");
+
+  const handleDelete = async () => {
+    const dataId = router.query.id;
+    try {
+      await fetch(`/api/data/${dataId}`, {
+        method: "DELETE",
+      });
+      router.push("/");
+    } catch (error) {
+      setMessage("Error al eliminar");
+    }
+  };
+
+  return (
+    &lt;div className="container">
+      &lt;h1 className="my-2">Detalle:&lt;/h1>
+      &lt;div className="card">
+        &lt;div className="card-body">
+          &lt;div className="card-title text-uppercase">
+            &lt;h5>{data.title}&lt;/h5>
+          &lt;/div>
+          &lt;p className="fw-light">{data.desc}&lt;/p>
+          &lt;Link href="/data/[id]/edit" as={`/data/${data._id}/edit`}>
+            &lt;a className="btn btn-warning me-2">Editar&lt;/a>
+          &lt;/Link>
+          &lt;Link href="/">
+          &lt;a className="btn btn-warning my-3">Volver&lt;/a>
+        &lt;/Link>
+          &lt;button className="btn btn-danger" onClick={handleDelete}>
+            Eliminar
+          &lt;/button>
+          {message &amp;&amp; &lt;p>{message}&lt;/p>}
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  );
+}
+
+export async function getServerSideProps({ params }) {
+  try {
+    await mongo();
+    const data = await Data.findById(params.id).lean();
+    data._id = data._id.toString();
+    return { props: { data } };
+  } catch (error) {
+    console.log("error", error);
+  }
+}
+export default OneData;</code></pre>
+        </article>
+    </section>
 
 
 

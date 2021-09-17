@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-mongo.html">mongo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Form">Form</a></li></ul></div><div class="category"><h2>API</h2><h3>Namespaces</h3><ul><li><a href="-_api_data.html">/api/data</a></li><li><a href="-_api_data__id.html">/api/data/:id</a></li></ul></div><div class="category"><h2>Data Models</h2><h3>Namespaces</h3><ul><li><a href="DataSchema.html">DataSchema</a></li></ul></div><div class="category"><h2>Pages</h2><h3>Components</h3><ul><li><a href="Home.html">Home</a></li><li><a href="New.html">New</a></li></ul></div><div class="category"><h2>getServerSideProps</h2><h3>Global</h3><ul><li><a href="global.html#home">home</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-mongo.html">mongo</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Form">Form</a></li></ul></div><div class="category"><h2>API</h2><h3>Namespaces</h3><ul><li><a href="-_api_data.html">/api/data</a></li><li><a href="-_api_data__id.html">/api/data/:id</a></li></ul></div><div class="category"><h2>Data Models</h2><h3>Namespaces</h3><ul><li><a href="DataSchema.html">DataSchema</a></li></ul></div><div class="category"><h2>Pages</h2><h3>Components</h3><ul><li><a href="Home.html">Home</a></li><li><a href="New.html">New</a></li><li><a href="OneData.html">OneData</a></li></ul></div><div class="category"><h2>getServerSideProps</h2><h3>Global</h3><ul><li><a href="global.html#home">home</a></li></ul></div>
                 
             </nav>
         </div>
@@ -135,10 +135,10 @@ import Link from "next/link";
               &lt;p className="text-uppercase h5">{title}&lt;/p>
               &lt;p className="fw-light">{desc}&lt;/p>
               &lt;div>
-                &lt;Link href="/[id]/edit" as={`/${_id}/edit`}>
+                &lt;Link href="/data/[id]/edit" as={`/data/${_id}/edit`}>
                   &lt;a className="btn btn-warning me-2">Editar&lt;/a>
                 &lt;/Link>
-                &lt;Link href="/[id]" as={`/${_id}`}>
+                &lt;Link href="/data/[id]" as={`/data/${_id}`}>
                   &lt;a className="btn btn-info">Visualizar&lt;/a>
                 &lt;/Link>
               &lt;/div>

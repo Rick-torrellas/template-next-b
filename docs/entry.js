@@ -27,3 +27,6 @@ reactComponents['Home'] = Component0;
 
 import Component1 from '../pages/new.js';
 reactComponents['New'] = Component1;
+
+import Component2 from '../pages/data/[id]/index.js';
+reactComponents['OneData'] = Component2;
